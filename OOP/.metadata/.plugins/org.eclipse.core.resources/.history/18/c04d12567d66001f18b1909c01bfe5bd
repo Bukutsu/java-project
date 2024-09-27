@@ -1,0 +1,42 @@
+package cpe.eng.kps.ku.ac.th;
+
+import java.util.Iterator;
+
+
+public class DriverProgram {
+
+	public static void main(String[] args) {
+		 // TODO Auto-generated method stub
+		 NameRepository namesRepository = new NameRepository() {
+			 String[] names = {"John","May","Ryan"};
+
+			 public Iterator getIterator() {
+				 return new NameIterator();
+			 }
+			 
+			 class NameIterator implements Iterator{
+			 int index = 0 ;
+			 public boolean hasNext() {
+				 if(index < names.length)
+					 return true ;
+				 
+			 	return false;
+			 }
+			 public Object next() {
+				 return names[index++];
+			 }
+
+			 public void remove() {
+				 
+			 }
+			 }
+		 };
+		 
+		 for (Iterator iter = namesRepository.getIterator(); iter.hasNext();){
+		 String name = (String) iter.next();
+		 System.out.println("Name : " + name);
+		}
+	} 
+
+
+}

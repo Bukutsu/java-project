@@ -1,0 +1,26 @@
+// Exercise: Library Management System
+
+// Create a basic library management system with the following requirements:
+
+// 1. Create a base class called "LibraryItem" with the following attributes:
+//    - title (String)
+//    - itemId (String)
+//    - available (boolean)
+// 2. Implement getter and setter methods for all attributes in LibraryItem.
+// 3. Create a constructor for LibraryItem that takes title and itemId as parameters.
+// 4. Create two subclasses of LibraryItem: "Book" and "DVD".
+// 5. The Book class should have an additional attribute:
+//    - author (String)
+// 6. The DVD class should have an additional attribute:
+//    - director (String)
+// 7. Implement constructors for Book and DVD classes.
+// 8. Create a class called "Library" that has a collection of LibraryItems.
+// 9. Implement methods in the Library class to:
+//    - addItem(LibraryItem item)
+//    - removeItem(String itemId)
+//    - findItem(String itemId)
+//    - borrowItem(String itemId)
+//    - returnItem(String itemId)
+// 10. Create a main method to demonstrate the usage of these classes.
+
+// Write your code below:

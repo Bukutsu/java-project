@@ -1,0 +1,47 @@
+package cpe.eng.kps.ac.th;
+
+public class InventoryCart {
+	private int itemLimit;
+	private int count;
+	private Product[] products;
+	
+	public int getItemLimit() {
+		return itemLimit;
+	}
+	
+	
+	public InventoryCart(int itemLimit){
+		this.itemLimit = itemLimit;
+		this.products = new Product[itemLimit];
+		this.count = 0;
+	}
+	
+	
+	public void addProduct(Product product){
+		if(this.count < this.itemLimit) {
+			this.products[count] = product;
+			this.count++;
+		}
+	}
+	
+	public Product getProduct(int productCount) {
+		if(this.products[productCount] != null && productCount < this.itemLimit) {
+			Product returnProduct = products[productCount];
+			this.count--;
+			return returnProduct;
+		}
+		return null;
+		
+	}
+	
+	public Product[] getallProduct() {
+		Product[] returnProducts = this.products;
+		this.products = new Product[this.itemLimit];
+		return returnProducts;
+	}
+	
+	
+
+	
+
+}

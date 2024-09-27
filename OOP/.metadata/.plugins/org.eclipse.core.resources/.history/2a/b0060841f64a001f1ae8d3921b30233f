@@ -1,0 +1,10 @@
+package cpe.eng.kps.ac.th;
+
+public class InventoryCart {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

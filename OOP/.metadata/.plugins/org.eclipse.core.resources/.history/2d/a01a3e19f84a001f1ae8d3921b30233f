@@ -1,0 +1,18 @@
+package cpe.eng.kps.ac.th;
+
+public class Product {
+	private String name;
+	private double price;
+	
+	void Product(String name,double price) {
+		this.name = name;
+		this.price = price;
+	}
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

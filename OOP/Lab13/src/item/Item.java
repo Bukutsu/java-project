@@ -11,12 +11,16 @@ public class Item {
 		this.quantity = quantity;
 	}
 	
+	
+	public String getName() {
+		return name;
+	}
 	public void printItemInfo() {
 		System.out.println(name + "\t" + "$" + price + "\t" + quantity + "\t" + "$" + price*quantity);
 	}
 
 	public String getItemInfo(){
-		return name + "\t" + "$" + price + "\t" + quantity + "\t" + "$" + price*quantity;
+		return name + "," + price + "," + quantity;
 	}
 	
 	public double getTotal() {

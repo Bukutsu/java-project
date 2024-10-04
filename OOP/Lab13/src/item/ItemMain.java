@@ -1,11 +1,12 @@
 package item;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ItemMain {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		ArrayList<Item> items = new ArrayList<Item>();
 		Scanner sc = new Scanner(System.in);
 
@@ -30,22 +31,37 @@ public class ItemMain {
 
 		ItemDAO itemDAO = new ItemDAO();
 		for(Item item : items) {
-			itemDAO.save;
+			itemDAO.save(item);
 		}
 		
-
-
-
+		
 
 		
-		System.out.println("Final Shopping Cart totals");
+		System.out.println("Current Shopping Cart");
 		double total = 0;
-		for(Item item : items) {
+		
+		ArrayList<Item> readingItems = itemDAO.findALL();
+		
+		for(Item item : readingItems) {
 			item.printItemInfo();
 			total += item.getTotal();
 		}
 		System.out.println("Total Amount in Cart: " + "$" +total);
 		
+		System.out.print("Enter the product name to check sells:");
+		String productName = sc.next();
+		for(Item item : readingItems) {
+			if(item.getName().equals(productName)) {
+				System.out.println("Item sells: ");
+				item.printItemInfo();
+			}
+		}
+		
+		
+		sc.close();
 	}
-
+	
+	
+	
+	
 }
